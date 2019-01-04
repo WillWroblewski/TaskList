@@ -25,9 +25,9 @@ const TaskForm = ({title, description, status, setTitle, setDescription, setStat
             </div>
             <div className="form-group">
                 <label for="status">Status</label>
-                <select 
-                    onChange={(e) => setStatus(e.target.value)}
+                <select                     
                     value={status}
+                    onChange={(e) => setStatus(e.target.value)}
                     className="form-control form-control-sm" 
                     id="status"
                 >
