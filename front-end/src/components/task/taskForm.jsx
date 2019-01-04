@@ -1,10 +1,10 @@
 import React from 'react'
 
-const TaskForm = ({title, description, status, setTitle, setDescription, setStatus}) => {
+const TaskForm = ({title, description, status, setTitle, setDescription, setStatus, errors}) => {
     return (
         <div>
             <div className="form-group">
-                <label for="title">Título</label>
+                <label htmlFor="title">Título</label>
                 <input 
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
@@ -14,7 +14,7 @@ const TaskForm = ({title, description, status, setTitle, setDescription, setStat
                 />
             </div>            
             <div className="form-group">
-                <label for="description">Decrição</label>
+                <label htmlFor="description">Decrição</label>
                 <textarea 
                     onChange={(e) => setDescription(e.target.value)}
                     value={description}
@@ -24,7 +24,7 @@ const TaskForm = ({title, description, status, setTitle, setDescription, setStat
                 </textarea>
             </div>
             <div className="form-group">
-                <label for="status">Status</label>
+                <label htmlFor="status">Status</label>
                 <select                     
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
@@ -34,7 +34,19 @@ const TaskForm = ({title, description, status, setTitle, setDescription, setStat
                     <option value="CREATED">Criado</option>
                     <option value="ENDED">Concluído</option>                    
                 </select>
-            </div>            
+            </div>  
+            {
+                errors.length 
+                ? 
+                    <div className="alert alert-danger" role="alert">                        
+                        {
+                            errors.map(error =>
+                                <p className="mb-0">{error}</p>       
+                            )
+                        }                        
+                    </div>                  
+                : null
+            }        
         </div>
     )
 }

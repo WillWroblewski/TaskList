@@ -21,7 +21,7 @@ class Tasks extends Component {
                     <button type="button" className="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal" data-target="#newTask">Editar</button>
                     <button onClick={this.props.deleteTask} type="button" className="btn btn-outline-danger btn-sm mr-1">Excluir</button>
                 </nav>
-                <div className="modal fade" id="newTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal fade" id="newTask" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -30,7 +30,7 @@ class Tasks extends Component {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <TaskForm
                                     title={this.props.task.title}
                                     description={this.props.task.description}
@@ -38,6 +38,7 @@ class Tasks extends Component {
                                     setTitle={this.props.setTitle}
                                     setDescription={this.props.setDescription}
                                     setStatus={this.props.setStatus}
+                                    errors={this.props.errors}
                                 />
                             </div>
                             <div class="modal-footer">
@@ -60,6 +61,7 @@ class Tasks extends Component {
                                 id={task.id}
                                 title={task.title}
                                 description={task.description}
+                                status={task.status}
                                 creation={task.creation}
                                 edition={task.edition}
                                 setTask={this.props.setTask}
@@ -73,6 +75,6 @@ class Tasks extends Component {
     }
 }
 
-const mapStateToProps = state => { return { tasks: state.tasks, task: state.taskReducer } }
+const mapStateToProps = state => { return { tasks: state.tasks, task: state.taskReducer, errors: state.taskErrors } }
 const mapDispatchToProps = dispatch => (bindActionCreators(taskActions, dispatch))
 export default connect(mapStateToProps, mapDispatchToProps)(Tasks)

@@ -8,18 +8,20 @@ export const deleteTask = () => (dispatch, getState) => {
         .then(
             () => {
                 dispatch(getTasks())
+                dispatch({ type: types.GET_ERRORS, payload: [] })
             }
         )    
         .catch(
             errors => {
-
+                dispatch({ type: types.GET_ERRORS, payload: errors.response.data.errors })
             }
         )    
     }        
 }
 
-export const newTask = () => {
-    return { type: types.SET_TASK }
+export const newTask = () => dispatch => {
+    dispatch({ type: types.SET_TASK })
+    dispatch({ type: types.GET_ERRORS, payload: [] })
 }
 
 export const setTitle = value => {
@@ -30,18 +32,42 @@ export const setDescription = value => {
     return { type: types.SET_DESCRIPTION, payload: value }
 }
 
-export const setStatus = value => {
-    if (value === ''){
-        return { type: types.SET_STATUS, payload: value }
-    }    
+export const setStatus = value => {    
+    return { type: types.SET_STATUS, payload: value }        
 }
 
 export const createOrUpdate = () => (dispatch, getState) => {
     const task = getState().taskReducer
-    task.id 
-    ? axios.put(apiConfig.url, task).then(() => {dispatch(getTasks())}).catch(errors => {})
-    : axios.post(apiConfig.url, task).then(() => {dispatch(getTasks())}).catch(errors => {})
-    document.querySelector('#cancelButton').click()
+    if (task.id){        
+        task.edition = new Date()
+        axios.put(apiConfig.url, task)
+        .then(
+            () => {
+                document.querySelector('#cancelButton').click()                
+                dispatch(getTasks())
+                dispatch({ type: types.GET_ERRORS, payload: [] })
+            }                
+        )
+        .catch(
+            errors => {
+                dispatch({ type: types.GET_ERRORS, payload: errors.response.data.errors })
+            }
+        )        
+    } else {
+        axios.post(apiConfig.url, task)
+        .then(
+            () => {
+                dispatch(getTasks())
+                document.querySelector('#cancelButton').click()
+                dispatch({ type: types.GET_ERRORS, payload: [] })
+            }
+        )
+        .catch(
+            errors => {
+                dispatch({ type: types.GET_ERRORS, payload: errors.response.data.errors })
+            }
+        )        
+    }        
 }
 
 export const setTask = id => (dispatch, getState) => {
@@ -57,7 +83,7 @@ export const getTasks = () => dispatch => {
     )   
     .catch(
         errors => {
-            console.log(errors)
+            
         }
     )
 }

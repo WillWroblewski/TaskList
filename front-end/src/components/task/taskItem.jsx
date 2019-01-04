@@ -3,7 +3,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 moment.locale('pt-BR');
 
-const TaskItem = ({id, title, description, creation, edition, setTask, task}) => {
+const TaskItem = ({id, title, description, status, creation, edition, setTask, task}) => {
     return (
         <div           
             onClick={() => setTask(id)} 
@@ -12,14 +12,13 @@ const TaskItem = ({id, title, description, creation, edition, setTask, task}) =>
         >
             <div className="d-flex w-100 justify-content-between">
                 <h5 className="mb-1">{title}</h5>
-                <small>{`Criado em: ${moment(creation).format('DD/MM/YYYY')}`}</small>
+                <small>{`Criado em: ${moment(creation).format('DD/MM/YYYY')}`}</small>                
             </div>
             <p className="mb-1">
                 {description}
             </p>
-            <small>
-                {`Ultima alteração: ${edition ? moment(edition).format('DD/MM/YYYY') : 'Nunca'}`}
-            </small>
+            <small>{`Ultima alteração: ${edition ? moment(edition).format('DD/MM/YYYY') : 'Nunca'}`}</small>
+            <small className="text-success float-right">{status === 'ENDED' && "CONCLUÍDO"}</small>
         </div>        
     )
 }

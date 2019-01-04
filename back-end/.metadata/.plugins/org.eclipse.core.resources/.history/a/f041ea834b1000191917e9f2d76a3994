@@ -70,5 +70,13 @@ public class Task {
 	public void setEdition(Date edition) {
 		this.edition = edition;
 	}
+	
+	public Date getConclusion() {
+		return conclusion;
+	}
+	
+	public void setConclusion(Date conclusion) {
+		this.conclusion = conclusion;
+	}	  
 
 }

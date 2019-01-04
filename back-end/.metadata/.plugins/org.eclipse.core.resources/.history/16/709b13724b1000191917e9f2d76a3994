@@ -14,8 +14,9 @@ import com.tasklist.api.en.TaskType;
 @Table(name = "task")
 public class Task {
 	
-	protected Task() {		
-		
+	protected Task() {
+		this.status = TaskType.CREATED;
+		this.creation = new Date();
 	}
 		
 	@Id
@@ -25,7 +26,8 @@ public class Task {
 	private String description;	
 	private TaskType status;
 	private Date creation;
-	private Date edition;	
+	private Date edition;
+	private Date conclusion;
 	
 	public long getId() {
 		return id;
@@ -70,5 +72,13 @@ public class Task {
 	public void setEdition(Date edition) {
 		this.edition = edition;
 	}
+	
+	public Date getConclusion() {
+		return conclusion;
+	}
+	
+	public void setConclusion(Date conclusion) {
+		this.conclusion = conclusion;
+	}	  
 
 }

@@ -72,11 +72,11 @@ public class TaskController {
 	
 	private void ValidateCreateTask(Task task, BindingResult result) {
 		
-		if(task.getTitle().isEmpty()) {
+		if(task.getTitle() == null) {
 			result.addError(new ObjectError("Task", "Título não informado!"));
 		}
 		
-		if(task.getDescription().isEmpty()) {
+		if(task.getDescription() == null) {
 			result.addError(new ObjectError("Task", "Descrição não informada!"));
 		}		
 	}

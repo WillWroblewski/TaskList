@@ -2,8 +2,7 @@ import * as types from './const'
 
 const taskStatus = {
     CREATED: 'CREATED',
-	ENDED: 'ENDED',
-	DELETED: 'DELETED'
+	ENDED: 'ENDED'	
 }
 
 const INITIAL_STATE = {
@@ -30,17 +29,13 @@ export const taskReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 description: action.payload
             }
-        case types.SET_CONCLUSION:
+        case types.SET_STATUS:
             return {
-                ...state,
-                conclusion: new Date(),
-                status: taskStatus.ENDED
-            }
-        case types.SET_EDITION:
-            return {
-                ...state,
-                edition: new Date()
-            }
+                ...state,                
+                status: action.payload === taskStatus.ENDED 
+                    ? taskStatus.ENDED 
+                    : taskStatus.CREATED
+            }        
         default:
             return state            
     }
@@ -49,6 +44,15 @@ export const taskReducer = (state = INITIAL_STATE, action) => {
 export const tasks = (state = [], action) => {
     switch(action.type){
         case types.GET_TASKS:
+            return action.payload          
+        default:
+            return state
+    }
+}
+
+export const taskErrors = (state = [], action) => {
+    switch(action.type){
+        case types.GET_ERRORS:
             return action.payload          
         default:
             return state
