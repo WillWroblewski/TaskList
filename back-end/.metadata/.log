@@ -1368,3 +1368,54 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:29.618
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.WlLSGiPr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:29.626
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.WlLSGiPr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:29.627
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:29.627
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.WlLSGiPr => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.734
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jMdTBbQu
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.734
+!MESSAGE subscribing to classpath changes: sts4.classpath.jMdTBbQu
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.735
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.735
+!MESSAGE subsribers = [sts4.classpath.jMdTBbQu]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.735
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.736
+!MESSAGE project tasklist-api ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.736
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.736
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jMdTBbQu => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.736
+!MESSAGE Preparing classpath changed notification tasklist-api
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.737
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.738
+!MESSAGE classpath=93 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.738
+!MESSAGE executing callback sts4.classpath.jMdTBbQu tasklist-api false 93
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-04 12:15:35.971
+!MESSAGE executing callback sts4.classpath.jMdTBbQu SUCCESS [done]
