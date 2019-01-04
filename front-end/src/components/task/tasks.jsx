@@ -17,9 +17,22 @@ class Tasks extends Component {
                 <h5 className="mt-4">Lista de tarefas</h5>
                 <hr/>
                 <nav className="nav mb-2">                
-                    <button onClick={this.props.newTask} type="button" className="btn btn-outline-success btn-sm mr-1" data-toggle="modal" data-target="#newTask">Novo</button>
-                    <button type="button" className="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal" data-target="#newTask">Editar</button>
-                    <button onClick={this.props.deleteTask} type="button" className="btn btn-outline-danger btn-sm mr-1">Excluir</button>
+                    <button onClick={this.props.newTask} 
+                        type="button" 
+                        className="btn btn-outline-success btn-sm mr-1" 
+                        data-toggle="modal" 
+                        data-target="#newTask">Novo
+                    </button>
+                    <button onClick={this.props.editTask} 
+                        type="button" 
+                        className={`btn btn-outline-secondary btn-sm mr-1 ${this.props.task.id ? '' : 'disabled'}`} 
+                        data-toggle="modal" 
+                        data-target={this.props.task.id ? `#newTask` : ''}>Editar
+                    </button>
+                    <button onClick={this.props.deleteTask} 
+                        type="button" 
+                        className="btn btn-outline-danger btn-sm mr-1">Excluir
+                    </button>
                 </nav>
                 <div className="modal fade" id="newTask" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">

@@ -19,6 +19,10 @@ export const deleteTask = () => (dispatch, getState) => {
     }        
 }
 
+export const editTask = () => dispatch => {    
+    dispatch({ type: types.GET_ERRORS, payload: [] })
+}
+
 export const newTask = () => dispatch => {
     dispatch({ type: types.SET_TASK })
     dispatch({ type: types.GET_ERRORS, payload: [] })
