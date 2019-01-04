@@ -1,0 +1,5 @@
+package com.tasklist.api.repository;
+
+public class TaskRepository {
+
+}

@@ -1,0 +1,7 @@
+package com.tasklist.api.en;
+
+public enum TaskType {
+	CREATED,
+	ENDED,
+	DELETED
+}

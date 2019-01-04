@@ -1,0 +1,6 @@
+package com.tasklist.api.en;
+
+public enum TaskType {
+	STARTED,
+	ENDED
+}

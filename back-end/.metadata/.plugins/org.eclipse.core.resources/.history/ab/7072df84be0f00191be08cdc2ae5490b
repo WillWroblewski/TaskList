@@ -1,0 +1,24 @@
+package com.tasklist.api.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TaskController {
+
+	/*
+	 * @Autowired private TaskRepository repository;
+	 * 
+	 * @RequestMapping(value="/task", method=RequestMethod.GET) public
+	 * Iterable<Task> getAll() { return this.repository.findAll(); }
+	 * 
+	 * @RequestMapping(value="/task", method=RequestMethod.POST) public Task
+	 * save(@RequestBody Task task) { return this.repository.save(task); }
+	 * 
+	 * @RequestMapping(value="/task/{id}", method=RequestMethod.DELETE) public void
+	 * delete(@PathVariable long id) { this.repository.deleteById(id); }
+	 * 
+	 * @RequestMapping(value="/task/{id}", method=RequestMethod.PUT) public void
+	 * update(@RequestBody Task task) { this.repository.save(task); }
+	 */
+	
+}

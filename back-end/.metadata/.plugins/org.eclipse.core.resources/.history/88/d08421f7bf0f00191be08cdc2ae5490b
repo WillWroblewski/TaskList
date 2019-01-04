@@ -1,0 +1,5 @@
+package com.tasklist.api.response;
+
+public class Response {
+
+}

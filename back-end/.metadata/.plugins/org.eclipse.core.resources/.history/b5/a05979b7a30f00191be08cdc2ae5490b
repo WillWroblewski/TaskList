@@ -1,0 +1,15 @@
+package com.tasklist.api.service;
+
+import org.springframework.data.domain.Page;
+
+import com.tasklist.api.entity.Task;
+
+public interface TaskService {
+	
+	Task createOrUpdate(Task task);	
+	
+	void delete(long id);
+	
+	Page<Task> findAll(int page, int count);
+	
+}

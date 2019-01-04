@@ -1,0 +1,5 @@
+package com.tasklist.api.en;
+
+public enum TaskType {
+
+}

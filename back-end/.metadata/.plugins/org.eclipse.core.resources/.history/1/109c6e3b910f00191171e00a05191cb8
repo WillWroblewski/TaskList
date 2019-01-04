@@ -1,0 +1,9 @@
+package com.tasklist.api.controller;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.tasklist.api.entity.Task;
+
+public interface TaskController extends CrudRepository<Task, Long> {
+	
+}

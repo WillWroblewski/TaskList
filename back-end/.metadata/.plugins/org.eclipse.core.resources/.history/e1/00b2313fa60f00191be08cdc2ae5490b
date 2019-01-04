@@ -1,0 +1,10 @@
+#database
+spring.datasource.url = jdbc:mysql://localhost:3306/tasklist
+spring.datasource.username = root
+spring.datasource.password = willwebmaster
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+#jwt
+jwt.secret=dfsad4ef5e1fd1sf2ads
+jwt.expiration=604800

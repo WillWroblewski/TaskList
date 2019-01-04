@@ -1,0 +1,46 @@
+package com.tasklist.api.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tasklist.api.entity.Task;
+import com.tasklist.api.response.Response;
+import com.tasklist.api.service.TaskService;
+
+@RestController
+@RequestMapping("/api/task")
+@CrossOrigin(origins = "*")
+public class TaskController {
+
+	
+	@Autowired
+	private TaskService service;
+	
+	@PostMapping
+	public ResponseEntity<Response<Task>> create(HttpServletRequest request, @RequestBody Task task, BindingResult result){
+		return null;
+	}
+
+	/*
+	 * @RequestMapping(value = "/task", method = RequestMethod.GET) public
+	 * List<Task> getAll() { return this.service.findAll(); }
+	 * 
+	 * @RequestMapping(value = "/task", method = RequestMethod.POST) public Task
+	 * save(@RequestBody Task task) { return this.; }
+	 * 
+	 * @RequestMapping(value = "/task/{id}", method = RequestMethod.DELETE) public
+	 * void delete(@PathVariable long id) { this.repository.deleteById(id); }
+	 * 
+	 * @RequestMapping(value = "/task/{id}", method = RequestMethod.PUT) public void
+	 * update(@RequestBody Task task) { this.repository.save(task); }
+	 */	 
+	
+}

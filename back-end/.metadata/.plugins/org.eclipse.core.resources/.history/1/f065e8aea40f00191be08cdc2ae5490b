@@ -1,0 +1,32 @@
+package com.tasklist.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tasklist.api.entity.Task;
+import com.tasklist.api.repository.TaskRepository;
+
+@RestController
+public class TaskController {
+
+	/*
+	 * @Autowired private TaskRepository repository;
+	 * 
+	 * @RequestMapping(value="/task", method=RequestMethod.GET) public
+	 * Iterable<Task> getAll() { return this.repository.findAll(); }
+	 * 
+	 * @RequestMapping(value="/task", method=RequestMethod.POST) public Task
+	 * save(@RequestBody Task task) { return this.repository.save(task); }
+	 * 
+	 * @RequestMapping(value="/task/{id}", method=RequestMethod.DELETE) public void
+	 * delete(@PathVariable long id) { this.repository.deleteById(id); }
+	 * 
+	 * @RequestMapping(value="/task/{id}", method=RequestMethod.PUT) public void
+	 * update(@RequestBody Task task) { this.repository.save(task); }
+	 */
+	
+}
